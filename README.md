@@ -1,47 +1,29 @@
-# Princípios de microsserviços
+# Ignite Lab 01
 
-- Única responsabilidade dentro do domínio
-   - O que é dominio (Domain-Driven Design)
-   
-- Autonomia (sem dependências entre serviços)
+- NestJS
+- GraphQL
+- Apache Kafka
+- Next.js
+- Apollo Client (GraphQL)
 
-# Ganhos 
+## Funcionalidades
 
-- Independência
-   - Times
-   - Github
-   - CI/CD
+### Serviço de compras (purchases)
 
-- Fácil manutenção
-   - Menos código
-   - Menos responsabilidade
-   - Menos testes
-   - Ambiente de dev mais enxuto
+- [Admin] Cadastro de produtos
+- [Admin] Listagem de produtos
 
-- Escalonamento independente
+- [Auth] Listagem de compras
 
-# Desafios
+- [Public] Compra de um produto
+- [Public] Lista produtos disponíveis p/ compra
 
-- Observabilidade
-- Comunicação
-- Resiliência a falhas
+### Serviço de sala de aula (classroom)
 
-# Conceitos Importantes
+- [Admin] Listar matrículas
+- [Admin] Listar alunos
+- [Admin] Listar cursos
+- [Admin] Cadastrar cursos
 
-- Isolar por domínio
-   - A mesma entidade pode ser representada de formas diferentes em cada domínio
-- Banco de dados isolados
-- Comunicação assíncrona
-
-# Hands-on
-
-# App
-
-Um aplicação que simula o recebimento de uma compra e envia os dados do produtos comprados para outra plataforma "liberar o acesso" do usuário ao produto.
-
-# Ferramentas
-
-- Kafka
-- Node.js
-- TypeScript  
-- PostgreSQL
+- [Auth] Listar cursos que tenho acesso
+- [Auth] Acessar conteúdo do curso

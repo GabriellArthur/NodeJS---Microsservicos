@@ -1,21 +1,22 @@
 version: '3'
 
 services:
+  # Application
+
   database:
-    container_name: micro_db
-    image: 'postgres:alpine'
+    image: 'bitnami/postgresql'
     ports:
       - '5432:5432'
-    volumes:
-      - 'postgresql_data:/var/lib/postgresql'
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=docker
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=app
+    volumes:
+      - 'postgresql_data:/bitnami/postgresql'
     networks:
       - app-net
 
   zookeeper:
-    container_name: micro_zookeeper
     image: 'bitnami/zookeeper:3'
     ports:
       - '2181:2181'
@@ -27,7 +28,6 @@ services:
       - app-net
 
   kafka:
-    container_name: micro_kafka
     image: 'bitnami/kafka:2'
     ports:
       - '9092:9092'
@@ -53,4 +53,6 @@ volumes:
   kafka_data:
     driver: local
   postgresql_data:
+    driver: local
+  redis_data:
     driver: local
